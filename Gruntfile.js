@@ -138,7 +138,7 @@ module.exports = function (grunt) {
         /*concat: {
             dist: {}
         },*/
-        
+
         uglify: {
             dist: {
                 files: {
@@ -254,7 +254,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'jshint',
-        'test',
+        //'test',
         'coffee',
         'compass:dist',
         'useminPrepare',
