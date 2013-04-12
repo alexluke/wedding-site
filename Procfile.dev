@@ -1,0 +1,2 @@
+web: gunicorn wedding:app
+compass: compass watch static
