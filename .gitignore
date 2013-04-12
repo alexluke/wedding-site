@@ -1,4 +1,5 @@
 .env
 wedding/static/css/
 wedding/static/.sass-cache/
-wedding/static/js/
+wedding/static/js/*
+!wedding/static/js/vendor/
