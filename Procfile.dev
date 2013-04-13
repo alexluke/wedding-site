@@ -1,3 +1,3 @@
 web: python wedding
-compass: compass watch wedding/static
+compass: compass watch -I components wedding/static
 coffee: coffee --watch --compile --output wedding/static/js/ wedding/static/coffee/
