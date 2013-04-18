@@ -1,3 +1,5 @@
+import os
+from flask import abort, send_file
 from wedding import app
 from helpers import templated
 
@@ -45,3 +47,15 @@ def get_nav():
         ('registry', 'Registry'),
         ('contact', 'Contact Us'),
     ])
+
+# Serve the components when in debug mode.
+# They will be concatted and minified in
+# live mode.
+if app.debug:
+    @app.route('/components/<path:filename>')
+    def components(filename):
+        filename = os.path.join(os.getcwd(), 'components', filename)
+        if not os.path.isfile(filename):
+            abort(404)
+        return send_file(filename)
+
