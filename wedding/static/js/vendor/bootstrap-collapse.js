@@ -1,0 +1,1 @@
+../../../../components/sass-bootstrap/js/bootstrap-collapse.js

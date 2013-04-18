@@ -17,10 +17,36 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        {% block content %}{% endblock %}
+        <div class="container">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a href="#" class="brand hidden-desktop" data-toggle="collapse" data-target=".nav-collapse">Navigation</a>
+                        <div class="nav-collapse collapse navbar-responsive-collapse">
+                            <ul class="nav">
+                                {% for endpoint, caption in navigation %}
+                                    <li{% if endpoint == request.endpoint %} class="active"{% endif %}>
+                                        <a href="{{ url_for(endpoint) }}">{{ caption }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% block content %}{% endblock %}
+        </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/vendor/jquery-1.9.1.min.js') }}"><\/script>')</script>
+        <script src="{{ url_for('static', filename='js/vendor/bootstrap-collapse.js') }} "></script>
+        <script src="{{ url_for('static', filename='js/vendor/bootstrap-transition.js') }} "></script>
         <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
         <script>
