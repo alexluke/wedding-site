@@ -11,17 +11,14 @@ body {
     max-width: 1000px;
 }
 
-.hero-unit {
-    margin: 0 auto;
+.billboard {
+    background-image: url('http://placehold.it/1000x300');
+    vertical-align: middle;
+    line-height: 300px;
     text-align: center;
 
-    img {
-        margin-top: 20px;
-    }
-}
-
-@media (max-width: 767px) {
-    .hero-unit h1 {
-        font-size: 40px;
+    hgroup {
+        display: inline-block;
+        vertical-align: middle;
     }
 }
