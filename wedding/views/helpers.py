@@ -11,7 +11,7 @@ def templated(template=None):
             ctx = f(*args, **kwargs)
             if ctx is None:
                 ctx = {}
-            elif not instance(ctx, dict):
+            elif not isinstance(ctx, dict):
                 return ctx
             return render_template(template_name, **ctx)
         return decorated_function
