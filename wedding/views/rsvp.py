@@ -3,7 +3,7 @@ from wedding import app
 from helpers import templated
 from wedding.models import *
 
-@app.route('/rsvp', methods=['GET', 'POST'])
+@app.route('/event-details/rsvp', methods=['GET', 'POST'])
 @templated()
 def rsvp():
     if request.method == 'POST':
@@ -45,3 +45,7 @@ def rsvp():
         return dict(form=request.form, errors=errors)
 
     return dict(form={})
+
+@app.route('/event-details/potluck', methods=['GET', 'POST'])
+def potluck():
+    return ''
