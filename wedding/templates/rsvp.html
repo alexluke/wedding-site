@@ -2,81 +2,93 @@
 
 {% block content %}
 <form class="form-horizontal" method="POST" action="{{ url_for('rsvp') }}">
-    <div class="control-group">
+    <div class="control-group{% if 'name' in errors %} error{% endif %}">
         <label class="control-label" for="name">Name:</label>
         <div class="controls">
-            <input type="text" id="name" name="name" placeholder="Name" required />
+            <input type="text" id="name" name="name" placeholder="Name" required value="{{ form.name }}" >
+            {% if 'name' in errors %}
+                <span class="help-inline">{{ errors.name }}</span>
+            {% endif %}
         </div>
     </div>
-    <div class="control-group">
+    <div class="control-group{% if 'email' in errors %} error{% endif %}">
         <label class="control-label" for="email">Email:</label>
         <div class="controls">
-            <input type="email" id="email" name="email" placeholder="Email" required />
+            <input type="email" id="email" name="email" placeholder="Email" required value="{{ form.email }}">
+            {% if 'email' in errors %}
+                <span class="help-inline">{{ errors.email }}</span>
+            {% endif %}
         </div>
     </div>
-    <div class="control-group">
+    <div class="control-group{% if 'attending' in errors %} error{% endif %}">
         <div class="controls">
             <label class="radio">
-                <input type="radio" name="attending" value="yes" data-target="#attending">
+                <input type="radio" name="attending" value="yes" data-target="#attending"{% if form.attending == 'yes' %} checked{% endif %}>
                 Yes, I'm attending with
-                <input type="number" name="num_adult_guests" value="1" min="1" class="input-mini" />
+                <input type="number" name="num_adult_guests" value="{{ form.num_adult_guests|default(1) }}" min="1" class="input-mini">
                 adults (including myself) and
-                <input type="number" name="num_adult_children" value="0" min="0" class="input-mini" />
+                <input type="number" name="num_child_guests" value="{{ form.num_child_guests|default(0) }}" min="0" class="input-mini">
                 children.
             </label>
             <label class="radio">
-                <input type="radio" name="attending" value="no" data-target="#notAttending">
+                <input type="radio" name="attending" value="no" data-target="#notAttending"{% if form.attending == 'no' %} checked{% endif %}>
                 No, I am not able to attend
             </label>
+            {% if 'attending' in errors %}
+                <span class="help-block">{{ errors.attending }}</span>
+            {% endif %}
         </div>
     </div>
-    <div id="notAttending" class="collapse">
+    <div id="notAttending" class="collapse{% if form.attending == 'no' %} in{% endif %}">
         <div class="control-group">
             <label class="control-label" for="message">Message:</label>
             <div class="controls">
-                <textarea name="message" rows="5" class="input-xxlarge"></textarea>
+                <textarea name="message" rows="5" class="input-xxlarge">{{ form.message }}</textarea>
             </div>
         </div>
         <div class="control-group">
             <div class="controls">
-                <input type="submit" class="btn btn-primary btn-large" value="Sorry I can't make it :(" />
+                <input type="submit" class="btn btn-primary btn-large" value="Sorry I can't make it :(">
             </div>
         </div>
     </div>
-    <div id="attending" class="collapse">
-        <div class="control-group">
+    <div id="attending" class="collapse{% if form.attending == 'yes' %} in{% endif %}">
+        <div class="control-group{% if 'attending_any' in errors %} error{% endif %}">
             <span class="control-label">Attendance:</span>
             <div class="controls">
                 <label class="checkbox">
-                    <input type="checkbox" name="attending_ceremony" />
+                    <input type="checkbox" name="attending_ceremony"{% if form.attending_ceremony %} checked{% endif %}>
                     I want to attend the ceremony.
                 </label>
                 <label class="checkbox">
-                    <input type="checkbox" name="attending_reception" />
+                    <input type="checkbox" name="attending_reception"{% if form.attending_reception %} checked{% endif %}>
                     I want to attend the reception.
                 </label>
+                {% if 'attending_any' in errors %}
+                    <span class="help-block">{{ errors.attending_any }}</span>
+                {% endif %}
             </div>
         </div>
         <div class="control-group">
             <span class="control-label">Dietary concerns:</span>
             <div class="controls">
                 <label class="checkbox">
-                    <input type="checkbox" name="vegetarian" />
+                    <input type="checkbox" name="vegetarian"{% if form.vegetarian %} checked{% endif %}>
                     I'm a vegetarian.
                 </label>
                 <label class="checkbox">
-                    <input type="checkbox" name="gluten_free" />
+                    <input type="checkbox" name="gluten_free"{% if form.gluten_free %} checked{% endif %}>
                     I'm gluten free.
                 </label>
             </div>
             <label class="control-label">Other dietry restrictions:</label>
             <div class="controls">
-                <textarea name="other_dietary" rows="5" class="input-xxlarge"></textarea>
+                <textarea name="other_dietary" rows="5" class="input-xxlarge">{{ form.other_dietary }}</textarea>
             </div>
         </div>
         <div class="control-group">
             <div class="controls">
-                <input type="submit" class="btn btn-primary btn-large" value="Sign me up!" />
+                <input type="submit" class="btn btn-primary btn-large" value="Sign me up!">
             </div>
         </div>
     </div>
