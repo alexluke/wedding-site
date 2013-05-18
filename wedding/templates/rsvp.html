@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form class="form-horizontal" method="POST" action="{{ url_for('rsvp') }}">
+    <div class="control-group">
+        <label class="control-label" for="name">Name:</label>
+        <div class="controls">
+            <input type="text" id="name" name="name" placeholder="Name" required />
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="email">Email:</label>
+        <div class="controls">
+            <input type="email" id="email" name="email" placeholder="Email" required />
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <label class="radio">
+                <input type="radio" name="attending" value="yes" data-target="#attending">
+                Yes, I'm attending with 
+                <input type="number" name="num_adult_guests" value="0" min="0" class="input-mini" />
+                adults (including myself) and
+                <input type="number" name="num_adult_children" value="0" min="0" class="input-mini" />
+                children.
+            </label>
+            <label class="radio">
+                <input type="radio" name="attending" value="no" data-target="#notAttending">
+                No, I am not able to attend
+            </label>
+        </div>
+    </div>
+    <div id="notAttending" class="collapse">
+        <div class="control-group">
+            <label class="control-label" for="message">Message:</label>
+            <div class="controls">
+                <textarea name="message" rows="5" class="input-xxlarge"></textarea>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <input type="submit" class="btn btn-primary btn-large" value="Sorry I can't make it :(" />
+            </div>
+        </div>
+    </div>
+    <div id="attending" class="collapse">
+        <div class="control-group">
+            <span class="control-label">Attendance:</span>
+            <div class="controls">
+                <label class="checkbox">
+                    <input type="checkbox" name="attending_ceremony" />
+                    I want to attend the ceremony.
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" name="attending_reception" />
+                    I want to attend the reception.
+                </label>
+            </div>
+        </div>
+        <div class="control-group">
+            <span class="control-label">Dietary concerns:</span>
+            <div class="controls">
+                <label class="checkbox">
+                    <input type="checkbox" name="vegetarian" />
+                    I'm a vegetarian.
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" name="gluten_free" />
+                    I'm gluten free.
+                </label>
+            </div>
+            <label class="control-label">Other dietry restrictions:</label>
+            <div class="controls">
+                <textarea name="other_dietary" rows="5" class="input-xxlarge"></textarea>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <input type="submit" class="btn btn-primary btn-large" value="Sign me up!" />
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

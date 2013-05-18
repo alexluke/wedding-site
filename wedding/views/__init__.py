@@ -3,6 +3,8 @@ from flask import abort, send_file
 from wedding import app
 from helpers import templated
 
+import rsvp
+
 @app.route('/')
 @templated()
 def home():

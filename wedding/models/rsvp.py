@@ -7,7 +7,7 @@ class RSVP(BaseFields, db.Model):
     message = db.Column(db.Text)
     num_adult_guests = db.Column(db.Integer)
     num_child_guests = db.Column(db.Integer)
-    attending_wedding = db.Column(db.Boolean)
+    attending_ceremony = db.Column(db.Boolean)
     attending_reception = db.Column(db.Boolean)
     vegetarian = db.Column(db.Boolean)
     gluten_free = db.Column(db.Boolean)

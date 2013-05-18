@@ -7,3 +7,7 @@ require.config
         bootstrapTransition: ['jquery']
         bootstrapCollapse: ['jquery', 'bootstrapTransition']
     deps: ['bootstrapCollapse']
+
+require [
+    'rsvp'
+]
