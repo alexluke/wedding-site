@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form class="form-horizontal" method="POST" action="{{ url_for('potluck') }}">
+    <div class="control-group">
+        <span class="control-label">Course:</span>
+        <div class="controls">
+            <label class="radio">
+                <input type="radio" name="course" value="appetizer">Appetizer
+            </label>
+            <label class="radio">
+                <input type="radio" name="course" value="salad">Salad
+            </label>
+            <label class="radio">
+                <input type="radio" name="course" value="main_course">Main Course
+            </label>
+            <label class="radio">
+                <input type="radio" name="course" value="side">Side Dish
+            </label>
+            <label class="radio">
+                <input type="radio" name="course" value="dessert">Dessert
+            </label>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="dish">Dish:</label>
+        <div class="controls">
+            <input type="text" id="dish" name="dish" class="input-xlarge">
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <input type="submit" class="btn btn-primary btn-large" value="Save">
+        </div>
+    </div>
+</form>
+{% endblock %}

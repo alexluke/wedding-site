@@ -47,5 +47,6 @@ def rsvp():
     return dict(form={})
 
 @app.route('/event-details/potluck', methods=['GET', 'POST'])
+@templated()
 def potluck():
-    return ''
+    pass
