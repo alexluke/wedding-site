@@ -18,4 +18,4 @@ class BaseFields(object):
             if len(word) > 1:
                 return ('_%s_%s' % (word[:1], word[-1])).lower()
             return '_' + word.lower()
-        return re.sub(r'([A-Z+)(?=[a-z0-9])', _join, cls.__name__).lstrip('_')
+        return re.sub(r'([A-Z]+)(?=[a-z0-9])', _join, cls.__name__).lstrip('_').lower()
