@@ -84,4 +84,10 @@ def potluck():
 
         return dict(form=request.form, rsvp=rsvp, errors=errors)
 
-    return dict(form={}, rsvp=rsvp)
+    if rsvp.dish:
+        form = None
+    else:
+        form = dict()
+
+    dishes = PotluckDish.query.all()
+    return dict(form=form, rsvp=rsvp, dishes=dishes)

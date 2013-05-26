@@ -18,4 +18,4 @@ class PotluckDish(BaseFields, db.Model):
     course = db.Column(db.String(50))
     dish = db.Column(db.String(255))
 
-    rsvp = db.relationship(RSVP, backref=db.backref('dishes'))
+    rsvp = db.relationship(RSVP, backref=db.backref('dish', uselist=False))
