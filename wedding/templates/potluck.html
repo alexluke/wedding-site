@@ -1,31 +1,49 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form class="form-horizontal" method="POST" action="{{ url_for('potluck') }}">
-    <div class="control-group">
+<form class="form-horizontal" method="POST" action="{{ url_for('potluck') }}" novalidate>
+    {% if not rsvp %}
+        <div class="control-group{% if 'email' in errors %} error{% endif %}">
+            <label class="control-label" for="email">Email:</label>
+            <div class="controls">
+                <input type="email"  id="email" name="email" placeholder="Email" required value="{{ form.email }}">
+                {% if 'email' in errors %}
+                    <span class="help-inline">{{ errors.email }}</span>
+                {% endif %}
+                <span class="help-block">Use the email address you RSVP'd with. If you haven't yet, please <a href="{{ url_for('rsvp') }}">RSVP now</a>.</span>
+            </div>
+        </div>
+    {% endif %}
+    <div class="control-group{% if 'course' in errors %} error{% endif %}">
         <span class="control-label">Course:</span>
         <div class="controls">
             <label class="radio">
-                <input type="radio" name="course" value="appetizer">Appetizer
+                <input type="radio" name="course" value="appetizer"{% if form.course == 'appetizer'%} checked{% endif %}>Appetizer
             </label>
             <label class="radio">
-                <input type="radio" name="course" value="salad">Salad
+                <input type="radio" name="course" value="salad"{% if form.course == 'salad'%} checked{% endif %}>Salad
             </label>
             <label class="radio">
-                <input type="radio" name="course" value="main_course">Main Course
+                <input type="radio" name="course" value="main_course"{% if form.course == 'main_course'%} checked{% endif %}>Main Course
             </label>
             <label class="radio">
-                <input type="radio" name="course" value="side">Side Dish
+                <input type="radio" name="course" value="side"{% if form.course == 'side'%} checked{% endif %}>Side Dish
             </label>
             <label class="radio">
-                <input type="radio" name="course" value="dessert">Dessert
+                <input type="radio" name="course" value="dessert"{% if form.course == 'dessert'%} checked{% endif %}>Dessert
             </label>
+            {% if 'course' in errors %}
+                <span class="help-inline">{{ errors.course }}</span>
+            {% endif %}
         </div>
     </div>
-    <div class="control-group">
+    <div class="control-group{% if 'dish' in errors%} error{% endif %}">
         <label class="control-label" for="dish">Dish:</label>
         <div class="controls">
-            <input type="text" id="dish" name="dish" class="input-xlarge">
+            <input type="text" id="dish" name="dish" class="input-xlarge" placeholder="Dish" required value="{{ form.dish }}">
+            {% if 'dish' in errors %}
+                <span class="help-inline">{{ errors.dish }}</span>
+            {% endif %}
         </div>
     </div>
     <div class="control-group">

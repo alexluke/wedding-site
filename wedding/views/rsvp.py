@@ -1,4 +1,4 @@
-from flask import request, flash, redirect, url_for
+from flask import request, flash, redirect, url_for, session
 from wedding import app
 from helpers import templated
 from wedding.models import *
@@ -39,6 +39,7 @@ def rsvp():
 
             db.session.add(rsvp)
             db.session.commit()
+            session['rsvp_id'] = rsvp.id
             flash('Thanks for your RSVP.', 'success')
             return redirect(url_for('home'))
 
@@ -49,4 +50,38 @@ def rsvp():
 @app.route('/event-details/potluck', methods=['GET', 'POST'])
 @templated()
 def potluck():
-    pass
+    if 'rsvp_id' not in session:
+        rsvp = None
+    else:
+        rsvp = RSVP.query.get(session['rsvp_id'])
+
+    if request.method == 'POST':
+        errors = dict()
+        if not rsvp:
+            if not request.form['email']:
+                errors['email'] = 'Email is required'
+            else:
+                rsvp = RSVP.query.filter_by(email=request.form['email']).first()
+                if not rsvp:
+                    errors['email'] = "This email address hasn't RSVP'd yet."
+
+        if 'course' not in request.form:
+            errors['course'] = 'What type of dish are you bringing?'
+
+        if not request.form['dish']:
+            errors['dish'] = 'What are you bringing?'
+
+        if len(errors) == 0:
+            dish = PotluckDish()
+            dish.rsvp = rsvp
+            dish.course = request.form['course']
+            dish.dish = request.form['dish']
+
+            db.session.add(dish)
+            db.session.commit()
+            flash('Thanks for bring a dish for the potluck!', 'success')
+            return redirect(url_for('home'))
+
+        return dict(form=request.form, rsvp=rsvp, errors=errors)
+
+    return dict(form={}, rsvp=rsvp)
