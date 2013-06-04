@@ -1,7 +1,12 @@
+@import "compass/css3/opacity";
+
 @media (min-width: 980px) {
 .navbar {
     .navbar-inner {
         padding: 0;
+        border: 0;
+        @include border-radius(0);
+        @include opacity(.99);
     }
 
     .nav {
@@ -22,12 +27,10 @@
 
             &:first-child a {
                 border-left: 0;
-                border-radius: 3px 0 0 3px;
             }
 
             &:last-child a {
                 border-right: 0;
-                border-radius: 0 3px 3px 0;
             }
         }
     }

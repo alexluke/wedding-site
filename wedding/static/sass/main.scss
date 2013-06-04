@@ -1,6 +1,10 @@
 @import 'sass-bootstrap/lib/bootstrap';
 @import 'sass-bootstrap/lib/responsive';
 
+@import "compass/css3/box-shadow";
+
+@import "rgbapng";
+
 @import 'nav';
 
 body {
@@ -12,13 +16,25 @@ body {
 }
 
 .billboard {
-    background-image: url('http://placehold.it/1000x300');
+    background-size: 1000px 350px;
+    margin-top: -90px;
     vertical-align: middle;
-    line-height: 300px;
+    height: 350px;
+    line-height: 390px;
     text-align: center;
+    border-radius: 10px;
+    @include box-shadow();
 
     hgroup {
         display: inline-block;
         vertical-align: middle;
+        padding: 20px;
+        color: white;
+        border-radius: 10px;
+        @include rgba-background-inline(rgba(0, 0, 0, .6));
     }
+}
+
+.home .billboard {
+    background-image: url('../images/bg-home.jpg');
 }
