@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="billboard">
+    <hgroup>
+        <h1>The Wedding Party</h1>
+    </hgroup>
+</div>
+
+<div id="party-carousel" class="carousel slide" data-interval="false">
+    <div class="carousel-inner">
+        <div class="active item">
+            <h2>Our Parents</h2>
+            <div class="bio">
+                <img src="http://placehold.it/300x200">
+                <h3>Phil &amp; Linda Luke</h3>
+            </div>
+            <div class="bio">
+                <img src="http://placehold.it/300x200">
+                <h3>Cole &amp; Nancy Sonafrank</h3>
+            </div>
+        </div>
+        <div class="item">
+            <h2>Foo...</h2>
+        </div>
+        <div class="item">
+            <h2>Bar...</h2>
+        </div>
+        <div class="item">
+            <h2>Baz...</h2>
+        </div>
+    </div>
+
+    <ol class="carousel-indicators">
+        <li data-target="#party-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#party-carousel" data-slide-to="1"></li>
+        <li data-target="#party-carousel" data-slide-to="2"></li>
+        <li data-target="#party-carousel" data-slide-to="3"></li>
+    </ol>
+    <a class="carousel-control left" href="#party-carousel" data-slide="prev">&nbsp;&nbsp;</a>
+    <a class="carousel-control right" href="#party-carousel" data-slide="next">&nbsp;&nbsp;</a>
+</div>
+{% endblock %}

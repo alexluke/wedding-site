@@ -1,0 +1,82 @@
+@import "compass/css3/opacity";
+
+.carousel-control {
+    top: 25px;
+    background: #222;
+    border: 4px solid #222;
+    height: 30px;
+    line-height: 22px;
+
+    // Clear bootstrap styles
+    left: auto;
+    width: auto;
+    margin-top: auto;
+    @include border-radius(0);
+    @include opacity(1);
+
+    &:after {
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+
+        border-color: rgba(34, 34, 34, 0);
+        border-width: 30px;
+        top: 50%;
+        margin-top: -30px;
+    }
+
+    &.left {
+        margin-left: 30px;
+
+        &:after {
+            right: 100%;
+            border-right-color: #222;
+        }
+    }
+
+    &.right {
+        margin-right: 30px;
+
+        &:after {
+            left: 100%;
+            border-left-color: #222;
+        }
+    }
+}
+
+.carousel-indicators {
+    right: 47%;
+    top: 50px;
+
+    li {
+        background-color: #666;
+    }
+
+    .active {
+        background-color: #000;
+    }
+}
+
+.carousel-inner {
+    h2 {
+        @extend .text-center;
+        margin-bottom: 30px;
+    }
+
+    .item {
+        margin: 0 80px;
+    }
+}
+
+.bio {
+    height: 220px;
+
+    img {
+        margin-right: 20px;
+        float: left;
+        @extend .img-polaroid;
+    }
+}

@@ -3,10 +3,12 @@ require.config
         jquery: '../../components/jquery/jquery'
         bootstrapTransition: '../../components/sass-bootstrap/js/bootstrap-transition'
         bootstrapCollapse: '../../components/sass-bootstrap/js/bootstrap-collapse'
+        bootstrapCarousel: '../../components/sass-bootstrap/js/bootstrap-carousel'
     shim:
         bootstrapTransition: ['jquery']
         bootstrapCollapse: ['jquery', 'bootstrapTransition']
-    deps: ['bootstrapCollapse']
+        bootstrapCarousel: ['jquery']
+    deps: ['bootstrapCollapse', 'bootstrapCarousel']
 
 require [
     'rsvp'
