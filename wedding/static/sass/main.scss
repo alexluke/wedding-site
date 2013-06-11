@@ -16,11 +16,11 @@ body {
 }
 
 .billboard {
-    background-size: 1000px 350px;
+    background-size: 1000px 250px;
     margin-top: -90px;
     vertical-align: middle;
-    height: 350px;
-    line-height: 390px;
+    height: 250px;
+    line-height: 290px;
     text-align: center;
     border-radius: 10px;
     @include box-shadow();
@@ -36,6 +36,9 @@ body {
 }
 
 .home .billboard {
+    background-size: 1000px 350px;
+    height: 350px;
+    line-height: 390px;
     background-image: url('../images/bg-home.jpg');
 }
 
