@@ -38,3 +38,16 @@ body {
 .home .billboard {
     background-image: url('../images/bg-home.jpg');
 }
+
+.rsvp-banner {
+    vertical-align: middle;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 40px;
+
+    a {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
