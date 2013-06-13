@@ -18,8 +18,20 @@ def rsvp():
         else:
             attending = request.form['attending'] == 'yes'
 
-        if attending and not any([field in ('attending_ceremony', 'attending_reception') for field in request.form]):
-            errors['attending_any'] = 'You should really come to at least one of these'
+        if attending:
+            if not any([field in ('attending_ceremony', 'attending_reception') for field in request.form]):
+                errors['attending_any'] = 'You should really come to at least one of these'
+
+            try:
+                if int(request.form['num_adult_guests']) < 0:
+                    errors['attending'] = 'Please enter a number'
+            except ValueError:
+                errors['attending'] = 'Please enter a number'
+            try:
+                if int(request.form['num_child_guests']) < 0:
+                    errors['attending'] = 'Please enter a number'
+            except ValueError:
+                errors['attending'] = 'Please enter a number'
 
         if len(errors) == 0:
             rsvp = RSVP()
@@ -27,8 +39,8 @@ def rsvp():
             rsvp.email = request.form['email']
             rsvp.attending = attending
             if attending:
-                rsvp.num_adult_guests = request.form['num_adult_guests']
-                rsvp.num_child_guests = request.form['num_child_guests']
+                rsvp.num_adult_guests = int(request.form['num_adult_guests'])
+                rsvp.num_child_guests = int(request.form['num_child_guests'])
                 rsvp.attending_ceremony = 'attending_ceremony' in request.form
                 rsvp.attending_reception = 'attending_reception' in request.form
                 rsvp.vegetarian = 'vegetarian' in request.form
