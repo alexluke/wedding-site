@@ -84,7 +84,7 @@ def potluck():
 
         return dict(form=request.form, rsvp=rsvp, errors=errors)
 
-    if rsvp.dish:
+    if rsvp and rsvp.dish:
         form = None
     else:
         form = dict()

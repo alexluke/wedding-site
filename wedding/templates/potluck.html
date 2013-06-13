@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% if form %}
+{% if form is not none %}
     {% include "_potluck_form.html" %}
 {% endif %}
 
