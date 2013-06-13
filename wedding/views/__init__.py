@@ -31,10 +31,12 @@ def visiting():
     pass
 
 @app.route('/registry')
+@templated()
 def registry():
     pass
 
 @app.route('/contact-us')
+@templated()
 def contact():
     pass
 
