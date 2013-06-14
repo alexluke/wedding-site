@@ -2,11 +2,13 @@
 
 @media (min-width: 980px) {
 .navbar {
+    position: relative;
+    z-index: 1;
+
     .navbar-inner {
         padding: 0;
         border: 0;
         @include border-radius(0);
-        @include opacity(.99);
     }
 
     .nav {
