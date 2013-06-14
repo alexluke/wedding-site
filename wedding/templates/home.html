@@ -1,12 +1,11 @@
-{% extends "base.html" %}
+{% extends "billboard.html" %}
 
-{% block content %}
-<div class="billboard">
-    <hgroup>
-        <h1>Alex and Colette are getting married!</h1>
-        <h2>Sunday September 1st @ 4pm</h2>
-    </hgroup>
-</div>
+{% block billboard %}
+    <h1>Alex and Colette are getting married!</h1>
+    <h2>Sunday September 1st @ 4pm</h2>
+{% endblock %}
+
+{% block inner_content %}
 {% include "_rsvp_banner.html" %}
 
 <div class="row-fluid">
