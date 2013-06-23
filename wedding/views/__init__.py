@@ -4,6 +4,7 @@ from wedding import app
 from helpers import templated
 
 import rsvp
+import contact
 
 @app.route('/')
 @templated()
@@ -33,11 +34,6 @@ def visiting():
 @app.route('/registry')
 @templated()
 def registry():
-    pass
-
-@app.route('/contact-us')
-@templated()
-def contact():
     pass
 
 @app.context_processor

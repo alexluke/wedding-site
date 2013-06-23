@@ -3,3 +3,40 @@
 {% block billboard %}
     <h1>Contact Us</h1>
 {% endblock %}
+
+{% block inner_content %}
+<form class="form-horizontal" method="POST" action="{{ url_for('contact') }}" novalidate>
+    <div class="control-group{% if 'name' in errors %} error{% endif %}">
+        <label class="control-label" for="name">Name:</label>
+        <div class="controls">
+            <input type="text" id="name" name="name" placeholder="Name" required value="{{ form.name }}" >
+            {% if 'name' in errors %}
+                <span class="help-inline">{{ errors.name }}</span>
+            {% endif %}
+        </div>
+    </div>
+    <div class="control-group{% if 'email' in errors %} error{% endif %}">
+        <label class="control-label" for="email">Email:</label>
+        <div class="controls">
+            <input type="email"  id="email" name="email" placeholder="Email" required value="{{ form.email }}">
+            {% if 'email' in errors %}
+                <span class="help-inline">{{ errors.email }}</span>
+            {% endif %}
+        </div>
+    </div>
+    <div class="control-group{% if 'message' in errors %} error{% endif %}">
+        <label class="control-label" for="message">Send a message: </label>
+        <div class="controls">
+            <textarea name="message" rows="7" class="input-xxlarge" required>{{ form.message }}</textarea>
+            {% if 'message' in errors %}
+                <span class="help-block">{{ errors.message }}</span>
+            {% endif %}
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <input type="submit" class="btn btn-primary btn-large" value="Send it!">
+        </div>
+    </div>
+</form>
+{% endblock %}
