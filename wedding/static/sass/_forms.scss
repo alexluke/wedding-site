@@ -1,0 +1,8 @@
+@import "compass/css3/box-shadow";
+
+.form-horizontal {
+    background-image: url('../images/wood_texture.jpg');
+    padding: 20px 10px;
+    border-radius: 10px;
+    @include box-shadow();
+}
