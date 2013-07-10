@@ -3,7 +3,7 @@ from wedding import app
 from helpers import templated
 from wedding.models import *
 
-@app.route('/event-details/rsvp', methods=['GET', 'POST'])
+@app.route('/rsvp', methods=['GET', 'POST'])
 @templated()
 def rsvp():
     if request.method == 'POST':
@@ -59,7 +59,7 @@ def rsvp():
 
     return dict(form={})
 
-@app.route('/event-details/potluck', methods=['GET', 'POST'])
+@app.route('/potluck', methods=['GET', 'POST'])
 @templated()
 def potluck():
     if 'rsvp_id' not in session:
