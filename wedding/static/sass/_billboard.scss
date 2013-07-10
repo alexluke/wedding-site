@@ -4,30 +4,23 @@
 @import "rgbapng";
 
 .billboard {
-    background-size: 1000px 250px;
-    margin-top: -90px;
-    vertical-align: middle;
-    height: 250px;
-    line-height: 290px;
-    text-align: center;
+    position: relative;
+    background-size: 1000px 300px;
+    height: 300px;
     @include border-bottom-radius(10px);
     @include box-shadow();
 
-    .center {
-        float: right;
-        right: 50%;
-        position: relative;
-    }
-
     hgroup {
-        float: right;
-        right: -50%;
-        position: relative;
-        margin-top: 120px;
-        padding: 20px;
+        position: absolute;
+        top: 60px;
         color: white;
-        border-radius: 10px;
-        @include rgba-background-inline(rgba(0, 0, 0, .6));
+        padding: 0 30px;
+        @include rgba-background-inline(rgba(0, 0, 0, .8));
+
+        h1 {
+            font-size: 30px;
+            line-height: 30px;
+        }
     }
 }
 
@@ -36,4 +29,8 @@
     height: 350px;
     line-height: 390px;
     background-image: url('../images/bg-home.jpg');
+}
+
+.visiting .billboard {
+    background-image: url('../images/bg-visiting.jpg');
 }

@@ -2,8 +2,11 @@
 
 @media (min-width: 980px) {
 .navbar {
-    position: relative;
+    position: absolute;
+    top: 20px;
     z-index: 1;
+    width: 100%;
+    max-width: $container-width;
 
     .navbar-inner {
         padding: 0;

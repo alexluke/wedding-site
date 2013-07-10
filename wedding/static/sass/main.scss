@@ -1,17 +1,15 @@
 @import 'sass-bootstrap/lib/bootstrap';
 @import 'sass-bootstrap/lib/responsive';
 
+$container-width: 1000px;
+
 @import 'nav';
 @import 'billboard';
 @import 'wedding_party';
 @import 'forms';
 
-body {
-    padding: 20px 0;
-}
-
 .container {
-    max-width: 1000px;
+    max-width: $container-width;
 }
 
 .rsvp-banner {
