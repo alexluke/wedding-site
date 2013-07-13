@@ -1,6 +1,10 @@
-{% extends "base.html" %}
+{% extends "billboard.html" %}
 
-{% block content %}
+{% block billboard %}
+    <h1>Potluck</h1>
+{% endblock %}
+
+{% block inner_content %}
 {% if form is not none %}
     {% include "_potluck_form.html" %}
 {% endif %}
