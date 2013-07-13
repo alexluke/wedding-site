@@ -15,6 +15,7 @@
         top: 60px;
         color: white;
         padding: 0 30px;
+        @include border-bottom-right-radius(10px);
         @include rgba-background-inline(rgba(0, 0, 0, .8));
 
         h1 {
