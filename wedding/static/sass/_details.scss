@@ -1,0 +1,19 @@
+.detail {
+    min-height: 140px;
+    padding-left: 110px;
+    background-size: 100px 100px;
+    background-position: 0 54px;
+    background-repeat: no-repeat;
+
+    &.activities {
+        background-image: url("../images/activities.jpg");
+    }
+
+    &.ceremony {
+        background-image: url("../images/ceremony.jpg");
+    }
+
+    &.food {
+        background-image: url("../images/food.jpg");
+    }
+}

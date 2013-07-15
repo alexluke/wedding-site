@@ -7,27 +7,49 @@
 {% block inner_content %}
     {% include "_rsvp_banner.html" %}
 
-    <h2>Venue</h2>
-    <p>The wedding will be at Alex's parents house in Ridgefield, WA, twenty minutes north of Portland, OR. Their house is ajacent to their nursery, South Ridge Growers, and we'll be taking advantage of the beautiful grounds and many plants. There are several fields available for lawn games, picnicking, and camping, and parking is available in the South Ridge Growers parking lot.</p>
+    <div class="row-fluid">
+        <div class="span6">
+            <div class="detail venue">
+                <h2>Venue</h2>
+                <p>The wedding will be at Alex's parents house in Ridgefield, WA, twenty minutes north of Portland, OR. Their house is ajacent to their nursery, South Ridge Growers, and we'll be taking advantage of the beautiful grounds and many plants. There are several fields available for lawn games, picnicking, and camping, and parking is available in the South Ridge Growers parking lot.</p>
+            </div>
 
-    <h2>Activities</h2>
-    <p>We want an activity filled wedding, no sitting around waiting! After the ceremony we will have all the lawn games we can get ahold of set up. Bocce ball, croquet, badmitton, horsheshoes, cornhole, and more. If you have a lawn game you'd like to loan us for the day, please <a href="{{ url_for('contact') }}">let us know</a>. Serena and Rob Baxter are bringing down their photo booth (thanks!) and we'll have lots of goofy props. After dinner there will be a bonfire, dancing, chinese lanterns and sparklers so please stick around until dusk and send a lantern up. </p>
+            <div class="detail activities">
+                <h2>Activities</h2>
+                <p>We want an activity filled wedding, no sitting around waiting! After the ceremony we will have all the lawn games we can get ahold of set up. Bocce ball, croquet, badmitton, horsheshoes, cornhole, and more. If you have a lawn game you'd like to loan us for the day, please <a href="{{ url_for('contact') }}">let us know</a>. Serena and Rob Baxter are bringing down their photo booth (thanks!) and we'll have lots of goofy props. After dinner there will be a bonfire, dancing, chinese lanterns and sparklers so please stick around until dusk and send a lantern up. </p>
+            </div>
 
-    <h2>Ceremony</h2>
-    <p>We'll be getting married on the front lawn at 3:00pm. The ceremony will be short and sweet unless anyone would like to sing songs, recite poetry or object. Just a few words about marriage, our declarations of undying love, a brief public display of affection, and then you're free to shower us with bubbles and enjoy the party.</p>
+            <div class="detail ceremony">
+                <h2>Ceremony</h2>
+                <p>We'll be getting married on the front lawn at 3:00pm. The ceremony will be short and sweet unless anyone would like to sing songs, recite poetry or object. Just a few words about marriage, our declarations of undying love, a brief public display of affection, and then you're free to shower us with bubbles and enjoy the party.</p>
+            </div>
 
-    <h2>Rehersal</h2>
-    <p>The rehersal dinner will be on Friday night at Alex's parent's house at 6:30 PM. We'll provide dinner and drinks. </p>
+            <div class="detail rehersal">
+                <h2>Rehersal</h2>
+                <p>The rehersal dinner will be on Friday night at Alex's parent's house at 6:30 PM. We'll provide dinner and drinks. </p>
+            </div>
+        </div>
 
-    <h2>Food</h2>
-    <p>There will be drinks and light snacks between the ceremony and dinner. The reception will be a potluck barbeque starting at 5:30. We'll be grilling the main meat course and would like everyone to bring their favorite side dish. To see what other people are bringing and sign up for a dish please <a href="{{ url_for('potluck') }}">visit the potluck page</a>.</p>
+        <div class="span6">
+            <div class="detail food">
+                <h2>Food</h2>
+                <p>There will be drinks and light snacks between the ceremony and dinner. The reception will be a potluck barbeque starting at 5:30. We'll be grilling the main meat course and would like everyone to bring their favorite side dish. To see what other people are bringing and sign up for a dish please <a href="{{ url_for('potluck') }}">visit the potluck page</a>.</p>
+            </div>
 
-    <h2>Set Up</h2>
-    <p>We are doing everything ourselves and would love all the help we can get. If you're interested in helping please <a href="{{ url_for('contact') }}">contact us</a>. Prior to the wedding we'll have many small crafty projects. On the wedding weekend we need the most help with the set-up on Saturday and clean-up on Monday. We'll provide food and gratitude on both days and raffle off some of our picnic tables! </p>
+            <div class="detail set-up">
+                <h2>Set Up</h2>
+                <p>We are doing everything ourselves and would love all the help we can get. If you're interested in helping please <a href="{{ url_for('contact') }}">contact us</a>. Prior to the wedding we'll have many small crafty projects. On the wedding weekend we need the most help with the set-up on Saturday and clean-up on Monday. We'll provide food and gratitude on both days and raffle off some of our picnic tables! </p>
+            </div>
 
-    <h2>Parking</h2>
-    <p>Please park in the South Ridge Growers parking lot. If the lot is full, park along the road on 39th Ave. </p>
+            <div class="detail parking">
+                <h2>Parking</h2>
+                <p>Please park in the South Ridge Growers parking lot. If the lot is full, park along the road on 39th Ave. </p>
+            </div>
 
-    <h2>Camping</h2>
-    <p>There is a field for pitching tents next to the reception area. We're encouraging everyone to camp and fully enjoy all our favorite cocktails, Portland beers and homemade wine. Camping will also be available for those traveling to Portland or wishing to camp for the whole weekend.</p>
+            <div class="detail camping">
+                <h2>Camping</h2>
+                <p>There is a field for pitching tents next to the reception area. We're encouraging everyone to camp and fully enjoy all our favorite cocktails, Portland beers and homemade wine. Camping will also be available for those traveling to Portland or wishing to camp for the whole weekend.</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
