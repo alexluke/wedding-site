@@ -7,6 +7,7 @@
     position: relative;
     background-size: 1000px 300px;
     height: 300px;
+    margin-bottom: 10px;
     @include border-bottom-radius(10px);
     @include box-shadow();
 

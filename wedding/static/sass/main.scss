@@ -1,6 +1,9 @@
 @import 'sass-bootstrap/lib/bootstrap';
 @import 'sass-bootstrap/lib/responsive';
 
+@import "compass/css3/box-shadow";
+@import "compass/css3/text-shadow";
+
 $container-width: 1000px;
 
 @import 'nav';
@@ -13,14 +16,17 @@ $container-width: 1000px;
 }
 
 .rsvp-banner {
-    vertical-align: middle;
-    height: 100px;
-    line-height: 100px;
+    margin: 0 auto;
+    width: 300px;
     text-align: center;
-    font-size: 40px;
+    @include box-shadow();
+    border-radius: 10px;
+    background-image: url("../images/wood-button.jpg");
+    background-size: 300px 80px;
 
     a {
-        display: inline-block;
-        vertical-align: middle;
+        font-size: 40px;
+        line-height: 80px;
+        @include text-shadow(0px 0px 5px #aaaaaa);
     }
 }
