@@ -4,6 +4,7 @@
     <h1>The Wedding Party</h1>
 {% endblock %}
 {% block inner_content %}
+{% include "_rsvp_banner.html" %}
 <div id="party-carousel" class="carousel slide" data-interval="false">
     <div class="carousel-inner">
         <div class="active item">
@@ -66,5 +67,4 @@
     <a class="carousel-control right" href="#party-carousel" data-slide="next">&rsaquo;</a>
 </div>
 
-{% include "_rsvp_banner.html" %}
 {% endblock %}
