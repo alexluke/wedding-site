@@ -4,5 +4,6 @@ wedding/static/css/
 wedding/static/.sass-cache/
 wedding/static/js/
 app.db
+node_modules/
 
 .DS_Store

@@ -1,0 +1,16 @@
+{
+  "name": "wedding",
+  "version": "1.0.0",
+  "dependencies": {
+    "bower": "~0.10.0",
+    "coffee-script": "~1.6.3"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/banduin/wedding-site.git"
+  },
+  "author": "Alex Luke <alex@alexluke.me>"
+}
