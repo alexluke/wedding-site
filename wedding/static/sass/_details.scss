@@ -5,6 +5,10 @@
     background-position: 0 54px;
     background-repeat: no-repeat;
 
+    &.venue {
+        background-image: url("../images/venue.jpg");
+    }
+
     &.activities {
         background-image: url("../images/activities.jpg");
     }
@@ -13,7 +17,23 @@
         background-image: url("../images/ceremony.jpg");
     }
 
+    &.rehersal {
+        background-image: url("../images/rehersal.jpg");
+    }
+
     &.food {
         background-image: url("../images/food.jpg");
+    }
+
+    &.set-up {
+        background-image: url("../images/setup.jpg");
+    }
+
+    &.parking {
+        background-image: url("../images/parking.jpg");
+    }
+
+    &.camping {
+        background-image: url("../images/camping.jpg");
     }
 }
