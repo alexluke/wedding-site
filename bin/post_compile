@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-bower install
+mkdir components && bower install
 compass compile -I components wedding/static
