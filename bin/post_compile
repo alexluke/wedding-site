@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+bower install
+compass compile -I components wedding/static
