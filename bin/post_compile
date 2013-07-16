@@ -2,3 +2,4 @@
 
 mkdir components && bower install
 compass compile -I components wedding/static
+coffee --compile --output wedding/static/js/ wedding/static/coffee/
