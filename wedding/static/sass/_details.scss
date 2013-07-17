@@ -1,9 +1,13 @@
 .detail {
-    min-height: 140px;
-    padding-left: 110px;
+    min-height: 150px;
     background-size: 100px 100px;
     background-position: 0 54px;
     background-repeat: no-repeat;
+    margin-bottom: 10px;
+
+    p {
+        padding-left: 110px;
+    }
 
     &.venue {
         background-image: url("../images/venue.jpg");
