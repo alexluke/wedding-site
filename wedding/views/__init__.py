@@ -1,5 +1,5 @@
 import os
-from flask import abort, send_file
+from flask import abort, send_file, session
 from wedding import app
 from helpers import templated
 
@@ -38,15 +38,18 @@ def registry():
 
 @app.context_processor
 def get_nav():
-    return dict(navigation=[
-        ('home', 'Home'),
-        ('wedding_party', 'Wedding Party'),
-        ('details', 'Event Details'),
-        ('planning', 'Planning'),
-        ('visiting', 'Visiting Portland'),
-        ('registry', 'Registry'),
-        ('contact', 'Contact Us'),
-    ])
+    return dict(
+        navigation=[
+            ('home', 'Home'),
+            ('wedding_party', 'Wedding Party'),
+            ('details', 'Event Details'),
+            ('planning', 'Planning'),
+            ('visiting', 'Visiting Portland'),
+            ('registry', 'Registry'),
+            ('contact', 'Contact Us'),
+        ],
+        has_rsvpd='rsvp_id' in session,
+    )
 
 # Serve the components when in debug mode.
 # They will be concatted and minified in
