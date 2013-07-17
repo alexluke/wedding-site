@@ -3,3 +3,31 @@
 {% block billboard %}
     <h1>Planning</h1>
 {% endblock %}
+
+{% block inner_content %}
+	{% include "_rsvp_banner.html" %}
+	<h2>Check Back Often</h2>
+		<p>This is a highly DIY wedding and we're relying on our friends and family to help minimize the amount of stuff we unnecessarily rent or buy. We'll be using this page to request and track borrowed items and as a way for you to help us think of creative ways to make our wedding awesome.</p>
+		<h4>Items</h4>
+			Please let us know if you'd be willing to loan us the below items for the weekend of the wedding, or if you know where to obtail them cheaply.</p>
+			<ul><li>picnic basket or vintage suitcase - for cards</li>
+				<li>lawn games</li>
+				<ul><li>bocce ball - Josh Patrice</li>
+					<li>cornhole - Larisa Brunsdon</li>
+					<li>badmitton - Larisa Brunsdon</li>
+					<li>croquet - Larisa Brunsdon </li>
+					<li>ladder golf - <a href="{{ url_for('contact') }}">???</a></li></li>
+					<li>frisbees - <a href="{{ url_for('contact') }}">???</a></li>
+					<li>ring toss - <a href="{{ url_for('contact') }}">???</a></li>
+					<li><a href="{{ url_for('contact') }}">other suggestions?</a></li></ul>
+				<li>giant trampoline</li>
+				<li>mason jars</li>
+				<li>LED outdoor white christmas lights</li>
+				<li>100+ dinner plates </li>
+			</ul><p>
+		<h4>Craftiness</h4>
+			<p><ul><li>make pie in a jar for the potluck - we will provide jars and recipes please <a href="{{ url_for('contact') }}">contact us</a> if interested.</li>
+				<li>attend the crafting weekend retreat 8/10 to 8/11 - we will be heading out to the island house for a weekend of crafting fun. Projects include paper crane chains, photobooth cutouts (mustaches galore!), cootie catchers, wedding activity books, and probably some other hair brained idea I will have come up with by then. </li></ul></p>
+
+
+{% endblock %}
