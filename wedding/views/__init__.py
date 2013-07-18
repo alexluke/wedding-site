@@ -36,6 +36,10 @@ def visiting():
 def registry():
     pass
 
+@app.route('/test_error')
+def test_error():
+    raise Exception('Test exception')
+
 @app.context_processor
 def get_nav():
     return dict(
