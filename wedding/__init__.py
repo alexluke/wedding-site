@@ -5,7 +5,7 @@ app = Flask(__name__.split('.')[0])
 app.config.from_object('wedding.envconf')
 mail = Mail(app)
 
-if not app.debug:
+if int(app.debug) == 0:
     import logging
     from logging.handlers import SMTPHandler
 
