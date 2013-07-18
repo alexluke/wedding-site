@@ -6,4 +6,12 @@
     padding: 20px 10px;
     border-radius: 10px;
     @include box-shadow();
+
+    label, .control-label {
+        font-weight: bold;
+    }
+
+    .help-block, .help-inline {
+        font-weight: bold;
+    }
 }
