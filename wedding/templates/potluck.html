@@ -5,10 +5,9 @@
 {% endblock %}
 
 {% block inner_content %}
-{% if form is not none %}
-    {% include "_potluck_form.html" %}
-{% endif %}
+{% include "_potluck_form.html" %}
 
+{% if dishes %}
 <h2>Other people are bringing these fine dishes</h2>
 {% for group in dishes|groupby('course') %}
     <h3>{{ group.grouper|capitalize }}</h3>
@@ -18,4 +17,5 @@
     {% endfor %}
     </ul>
 {% endfor %}
+{% endif %}
 {% endblock %}

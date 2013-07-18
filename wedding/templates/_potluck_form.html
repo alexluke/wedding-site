@@ -49,6 +49,27 @@
             {% endif %}
         </div>
     </div>
+    <div class="control-group{% if 'servings' in errors %} error{% endif %}">
+        <label class="control-label" for="servings">Number of servings:</label>
+        <div class="controls">
+            <input type="text" id="servings" name="servings" placeholder="Number of servings" required value="{{ form.servings }}">
+            {% if 'servings' in errors %}
+                <span class="help-inline">{{ errors.servings }}</span>
+            {% endif %}
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <label class="checkbox">
+                <input type="checkbox" name="vegetarian"{% if form.vegetarian %} checked{% endif %}>
+                Vegetarian
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" name="gluten_free"{% if form.gluten_free %} checked{% endif %}>
+                Gluten free
+            </label>
+        </div>
+    </div>
     <div class="control-group">
         <div class="controls">
             <input type="submit" class="btn btn-primary btn-large" value="Save">

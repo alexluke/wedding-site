@@ -86,23 +86,32 @@ def potluck():
         if not request.form['dish']:
             errors['dish'] = 'What are you bringing?'
 
+        if 'servings' not in request.form:
+            errors['servings'] = 'Please enter the number of servings in your dish'
+        elif request.form['servings']:
+            try:
+                if int(request.form['servings']) < 0:
+                    errors['servings'] = 'Please enter a number'
+            except ValueError:
+                errors['servings'] = 'Please enter a number'
+
         if len(errors) == 0:
             dish = PotluckDish()
             dish.rsvp = rsvp
             dish.course = request.form['course']
             dish.dish = request.form['dish']
+            dish.servings = request.form['servings']
+            dish.vegetarian = 'vegetarian' in request.form
+            dish.gluten_free = 'gluten_free' in request.form
 
             db.session.add(dish)
             db.session.commit()
             flash('Thanks for bring a dish for the potluck!', 'success')
-            return redirect(url_for('home'))
+            return redirect(url_for('potluck'))
 
         return dict(form=request.form, rsvp=rsvp, errors=errors)
 
-    if rsvp and rsvp.dish:
-        form = None
-    else:
-        form = dict()
+    form = dict()
 
     dishes = PotluckDish.query.all()
     return dict(form=form, rsvp=rsvp, dishes=dishes)

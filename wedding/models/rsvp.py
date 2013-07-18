@@ -17,5 +17,8 @@ class PotluckDish(BaseFields, db.Model):
     rsvp_id = db.Column(db.Integer, db.ForeignKey(RSVP.id), nullable=False)
     course = db.Column(db.String(50))
     dish = db.Column(db.String(255))
+    servings = db.Column(db.Integer)
+    vegetarian = db.Column(db.Boolean)
+    gluten_free = db.Column(db.Boolean)
 
-    rsvp = db.relationship(RSVP, backref=db.backref('dish', uselist=False))
+    rsvp = db.relationship(RSVP, backref=db.backref('dishes'))
