@@ -52,8 +52,11 @@ def rsvp():
             db.session.add(rsvp)
             db.session.commit()
             session['rsvp_id'] = rsvp.id
-            flash('Thanks for your RSVP.', 'success')
-            return redirect(url_for('home'))
+
+            if rsvp.attending:
+                return redirect(url_for('potluck'))
+            else:
+                return redirect(url_for('home'))
 
         return dict(form=request.form, errors=errors)
 
