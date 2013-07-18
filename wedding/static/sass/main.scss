@@ -31,3 +31,14 @@ $container-width: 1000px;
         @include text-shadow(0px 0px 5px #aaaaaa);
     }
 }
+
+.potluck {
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+}
+

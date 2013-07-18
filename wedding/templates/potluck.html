@@ -8,7 +8,7 @@
 {% include "_potluck_form.html" %}
 
 {% if dishes %}
-<h2>Other people are bringing these fine dishes</h2>
+<h2>Other people are bringing these fine dishes:</h2>
 {% for group in dishes|groupby('course') %}
     <h3>{{ group.grouper|capitalize }}</h3>
     <ul>
