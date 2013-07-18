@@ -1,4 +1,8 @@
-{% if not has_rsvpd %}
+{% if  has_rsvpd %}
+    <div class="rsvp-banner">
+        <a href="{{ url_for('potluck') }}">Potluck</a>
+    </div>
+{% else %}
     <div class="rsvp-banner">
         <a href="{{ url_for('rsvp') }}">RSVP Now!</a>
     </div>
