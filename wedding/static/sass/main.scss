@@ -42,7 +42,12 @@ $container-width: 1000px;
     }
 }
 
-.registry .lead {
-    margin-top: 20px;
-}
+.registry {
+    .lead {
+        margin-top: 50px;
+    }
 
+    .span2 {
+        text-align: center;
+    }
+}
