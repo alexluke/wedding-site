@@ -1,5 +1,6 @@
-from flask import request, flash, redirect, url_for, session
-from wedding import app
+from flask import request, flash, redirect, url_for, session, render_template
+from flask.ext.mail import Message
+from wedding import app, mail
 from helpers import templated
 from wedding.models import *
 
@@ -52,6 +53,14 @@ def rsvp():
             db.session.add(rsvp)
             db.session.commit()
             session['rsvp_id'] = rsvp.id
+
+            msg = Message("RSVP submission", recipients=['alex@alexluke.me', 'colettesonafrank@hotmail.com'])
+            if rsvp.attending:
+                msg.body = render_template('email/rsvp_attending.txt', rsvp=rsvp)
+            else:
+                msg.body = render_template('email/rsvp_not_attending.txt', rsvp=rsvp)
+
+            mail.send(msg)
 
             if rsvp.attending:
                 return redirect(url_for('potluck'))
@@ -106,6 +115,7 @@ def potluck():
 
             db.session.add(dish)
             db.session.commit()
+
             flash('Thanks for bring a dish for the potluck!', 'success')
             return redirect(url_for('potluck'))
 

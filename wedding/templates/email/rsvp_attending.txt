@@ -1,0 +1,11 @@
+{{ rsvp.name }} <{{ rsvp.email }}> is coming to the wedding!
+
+{{ rsvp.num_adult_guests }} adults
+{{ rsvp.num_child_guests }} children
+
+Attending ceremony:  {{ rsvp.attending_ceremony }}
+Attending reception: {{ rsvp.attending_reception }}
+
+Vegetarian:    {{ rsvp.vegetarian }}
+Gluten free:   {{ rsvp.gluten_free }}
+Other dietary: {{ rsvp.other_dietary }}

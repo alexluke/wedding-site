@@ -1,0 +1,3 @@
+{{ rsvp.name }} <{{ rsvp.email }}> is not coming to the wedding :(
+
+{{ rsvp.message }}
