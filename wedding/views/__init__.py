@@ -1,5 +1,5 @@
 import os
-from flask import abort, send_file, session
+from flask import abort, send_file, session, request
 from wedding import app
 from helpers import templated
 
@@ -52,7 +52,7 @@ def get_nav():
             ('registry', 'Registry'),
             ('contact', 'Contact Us'),
         ],
-        has_rsvpd='rsvp_id' in session,
+        has_rsvpd=request.cookies.has_key('has_rsvpd'),
     )
 
 # Serve the components when in debug mode.

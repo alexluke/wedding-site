@@ -1,4 +1,4 @@
-from flask import request, flash, redirect, url_for, session, render_template
+from flask import request, flash, redirect, url_for, session, render_template, make_response
 from flask.ext.mail import Message
 from wedding import app, mail
 from helpers import templated
@@ -63,7 +63,9 @@ def rsvp():
             mail.send(msg)
 
             if rsvp.attending:
-                return redirect(url_for('potluck'))
+                resp = make_response(redirect(url_for('potluck')))
+                resp.set_cookie('has_rsvpd', True)
+                return resp
             else:
                 return redirect(url_for('home'))
 
