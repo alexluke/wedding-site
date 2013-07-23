@@ -97,9 +97,9 @@ def potluck():
         if not request.form['dish']:
             errors['dish'] = 'What are you bringing?'
 
-        if 'servings' not in request.form:
+        if not request.form['servings']:
             errors['servings'] = 'Please enter the number of servings in your dish'
-        elif request.form['servings']:
+        else:
             try:
                 if int(request.form['servings']) < 0:
                     errors['servings'] = 'Please enter a number'
