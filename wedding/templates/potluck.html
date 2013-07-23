@@ -13,7 +13,7 @@
     <h3>{{ group.grouper|capitalize }}</h3>
     <ul>
     {% for dish in group.list %}
-        <li>{{ dish.rsvp.name}}: {{ dish.dish }}</li>
+        <li>{{ dish.rsvp.name}}: {{ dish.dish }} ({{ dish.servings }} servings)</li>
     {% endfor %}
     </ul>
 {% endfor %}
