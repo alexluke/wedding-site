@@ -29,11 +29,13 @@
 }
 
 .bio {
-    height: 220px;
+    min-height: 220px;
+
+    .span5 {
+        min-width: 300px;
+    }
 
     img {
-        margin-right: 20px;
-        float: left;
         width: 300px;
         height: 200px;
         @extend .img-polaroid;
