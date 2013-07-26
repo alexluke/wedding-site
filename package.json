@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "dependencies": {
     "bower": "~0.10.0",
-    "coffee-script": "~1.6.3"
+    "coffee-script": "~1.6.3",
+    "almond": "~0.2.5",
+    "requirejs": "~2.1.8"
   },
   "devDependencies": {
     "coffee-script": "~1.6.3"
