@@ -5,7 +5,8 @@
     "bower": "~0.10.0",
     "coffee-script": "~1.6.3",
     "almond": "~0.2.5",
-    "requirejs": "~2.1.8"
+    "requirejs": "~2.1.8",
+    "uglify-js": "~2.3.6"
   },
   "devDependencies": {
     "coffee-script": "~1.6.3"
