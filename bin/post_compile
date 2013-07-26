@@ -3,5 +3,5 @@
 mkdir components && bower install
 compass compile -s compressed -I components wedding/static
 coffee --compile --output wedding/static/js/ wedding/static/coffee/
-r.js -o baseUrl=wedding/static/js mainConfigFile=wedding/static/js/main.js name=../../../node_modules/almond/almond include=main includeLicenseComments=false out=wedding/static/js/built.js
+r.js -o baseUrl=wedding/static/js mainConfigFile=wedding/static/js/main.js name=../../../node_modules/almond/almond include=main preserveLicenseComments=false out=wedding/static/js/built.js
 sed -i 's/\(\s*\)<script data-main.*$/\1<script src="{{ url_for('\'static\'', filename='\'js\\/built.js\'') }}"><\/script>/' wedding/templates/base.html
