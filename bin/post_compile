@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 mkdir components && bower install
-compass compile -I components wedding/static
+compass compile -s compressed -I components wedding/static
 coffee --compile --output wedding/static/js/ wedding/static/coffee/
