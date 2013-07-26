@@ -43,7 +43,7 @@
             {% block content %}{% endblock %}
         </div>
 
-        <script src="{{ url_for('static', filename='js/built.js') }}"></script>
+        <script data-main="{{ url_for('static', filename='js/main.js') }}" src="{{ url_for('components', filename='requirejs/require.js') }}"></script>
 
         <script>
             var _gaq=[['_setAccount','UA-39870632-1'],['_trackPageview']];
