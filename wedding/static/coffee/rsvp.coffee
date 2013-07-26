@@ -8,3 +8,8 @@ define [
         target = $ $this.data 'target'
         target.collapse 'show'
 
+    $('input[type=number]').on 'click', ->
+        $this = $ this
+        setTimeout ->
+            $this.focus()
+        , 10
