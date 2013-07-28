@@ -62,11 +62,11 @@
             <div class="controls">
                 <label class="checkbox">
                     <input type="checkbox" name="attending_ceremony"{% if form.attending_ceremony %} checked{% endif %}>
-                    I want to attend the ceremony.
+                    I want to attend the ceremony (3pm).
                 </label>
                 <label class="checkbox">
                     <input type="checkbox" name="attending_reception"{% if form.attending_reception %} checked{% endif %}>
-                    I want to attend the reception.
+                    I want to attend the reception (5pm).
                 </label>
                 {% if 'attending_any' in errors %}
                     <span class="help-block">{{ errors.attending_any }}</span>
