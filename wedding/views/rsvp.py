@@ -120,6 +120,11 @@ def potluck():
 
             flash('Thanks for bring a dish for the potluck!', 'success')
             return redirect(url_for('potluck'))
+        else:
+            # If validation failed and we didn't get the rsvp from the session
+            # we don't want to form to hide the email field
+            if 'rsvp_id' not in session:
+                rsvp = None
 
         return dict(form=request.form, rsvp=rsvp, errors=errors)
 
