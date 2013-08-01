@@ -8,12 +8,12 @@
 {% include "_potluck_form.html" %}
 
 {% if dishes %}
-{% set names = {'appetizer': 'Appetizer', 'salad': 'Salad', 'main_course': 'Main Course', 'side': 'Side Dish', 'dessert': 'Dessert'} %}
+{% set names = [('appetizer', 'Appetizer'), ('salad', 'Salad'), ('main_course', 'Main Course'), ('side', 'Side Dish'), ('dessert', 'Dessert')] %}
 <h2>Other people are bringing these fine dishes:</h2>
-{% for group in dishes|groupby('course') %}
-    <h3>{{ names[group.grouper] }}</h3>
+{% for code, name in names %}
+    <h3>{{ name }}</h3>
     <ul>
-    {% for dish in group.list %}
+    {% for dish in dishes[code] %}
         <li>{{ dish.rsvp.name}}: {{ dish.dish }} ({{ dish.servings }} servings)</li>
     {% endfor %}
     </ul>

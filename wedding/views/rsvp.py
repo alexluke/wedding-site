@@ -1,3 +1,4 @@
+from itertools import groupby
 from flask import request, flash, redirect, url_for, session, render_template, make_response
 from flask.ext.mail import Message
 from wedding import app, mail
@@ -130,5 +131,9 @@ def potluck():
 
     form = dict()
 
-    dishes = PotluckDish.query.all()
+    all_dishes = PotluckDish.query.all()
+    dishes_grouped = groupby(sorted(all_dishes, key=lambda x: x.course), lambda x: x.course)
+    dishes = {}
+    for course, group in dishes_grouped:
+        dishes[course] = list(group)
     return dict(form=form, rsvp=rsvp, dishes=dishes)
